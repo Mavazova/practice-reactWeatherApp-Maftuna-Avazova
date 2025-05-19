@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef} from "react";
 import { useParams, Link } from "react-router-dom";
 
-function CityForest() {
+function CityForecast() {
     const {cityName} = useParams();
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] =  useState(true);
@@ -26,7 +26,7 @@ useEffect(() =>{
     setLoading(true);
 
     const timer = setTimeout(() =>{
-        const CityForest = weatherData[cityName];
+        const CityForecast = weatherData[cityName];
         setForecast(cityForecast || null);
         setLoading(false);
     }, 1000);
@@ -65,4 +65,6 @@ return (
     </div>
 );
 }
+
 export default CityForecast;
+
